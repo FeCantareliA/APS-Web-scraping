@@ -8,7 +8,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 import os
 import shutil
-salvar= "C:\\Users\\Felipe\\OneDrive\\Área de Trabalho\\Visual Studio\\Projetos\\APS 2\\arquivos"
+salvar= "\Visual Studio\\Projetos\\APS 2\\arquivos"
 servico=Service()
 option=webdriver.ChromeOptions()
 option.add_experimental_option("detach", True)
@@ -21,7 +21,7 @@ acesso.click()
 acesso.clear
 sleep(3)
 for i in range(20,23):
-    salvar= "C:\\Users\\Felipe\\OneDrive\\Área de Trabalho\\Visual Studio\\Projetos\\APS 2\\arquivos"
+    salvar= "\Visual Studio\\Projetos\\APS 2\\arquivos"
     acesso = navegador.find_element(By.ID,f'cphBody_lkAno{i}')
     acesso.click()
     for i in range(1,13):
@@ -35,5 +35,5 @@ for i in range(20,23):
     for j in range(1,13):
         for f in os.listdir(salvar):
             filename = salvar + "\\" + f 
-            if filename==f'C:\\Users\\Felipe\\OneDrive\\Área de Trabalho\\Visual Studio\\Projetos\\APS 2\\arquivos\\DadosBO_20{i}_{j}(FURTO DE VEÍCULOS).xls':
+            if filename==f'\Visual Studio\\Projetos\\APS 2\\arquivos\\DadosBO_20{i}_{j}(FURTO DE VEÍCULOS).xls':
                 shutil.move(filename,os.path.join(salvar,r"DadosBO_20{}_{}(FURTO DE VEÍCULOS).csv".format(i,j)))
